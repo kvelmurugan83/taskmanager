@@ -1,0 +1,11 @@
+<h2>{{task.taskName}} Details</h2>
+<div><span>id: </span>{{task.taskId}}</div>
+<div><span>parentId: </span>{{task.parentTask.taskName}}</div>
+<div><span>start Date: </span>{{task.startDate}}</div>
+<div><span>End Date: </span>{{task.endDate}}</div>
+<div  ><span>Priority: </span>
+  <div class="slidecontainer">
+    <input type="range" min="0" max="30" value="{{task.priority}}" style='width:25%'>
+  </div>
+</div>
+

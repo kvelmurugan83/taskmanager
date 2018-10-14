@@ -1,0 +1,33 @@
+.nav  {
+    width: 550px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+
+.nav ul {
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
+}
+
+.nav  li { 
+    display: inline; 
+    
+}
+
+.nav a {
+    text-decoration: none;
+    padding: 8px 8px 8px 8px;
+}
+
+.nav a:hover {
+    color: #000;
+    background-color: #FFF;
+}
+
+.router-link-active {
+	color: #000;
+	font-weight: bold;
+}

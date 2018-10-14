@@ -1,0 +1,74 @@
+<div class="container-fluid" style="padding-left:0px;">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-1"><strong>Task</strong></div>
+      <div class="col-md-3">
+        <input type="text" class="form-control underlined" name="taskName" id="taskName" [(ngModel)]="taskName"
+          (ngModelChange)="filterContains('taskName', taskName)">
+      </div>
+      <div class="col-md-1"><strong>Parent Task</strong></div>
+      <div class="col-md-3">
+        <input type="text" class="form-control underlined" name="parentTaskName" id="parentTaskName" [(ngModel)]="parentTaskName"
+        (ngModelChange)="filterContains('parentTaskName', parentTaskName)">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-1"><strong>Priority From</strong></div>
+      <div class="col-md-1">
+        <input type="text" class="form-control underlined" name="priorityFrom" id="priorityFrom" [(ngModel)]="priorityFrom"
+        (ngModelChange)="filterGreaterThan('priority', priorityFrom)">
+      </div>
+      <div class="col-md-1 "><strong>Priority To</strong></div>
+      <div class="col-md-1">
+        <input type="text" class="form-control underlined" name="priorityTo" id="priorityTo" [(ngModel)]="priorityTo"
+        (ngModelChange)="filterLessThan('priority', priorityTo)">
+      </div>
+      <div class="col-md-1"><strong>Start Date</strong></div>
+      <div class="col-md-1">
+        <input type="text" class="form-control underlined" name="dateFrom" id="dateFrom" [(ngModel)]="dateFrom"
+        (ngModelChange)="filterDateAfter('startDate', dateFrom)">
+      </div>
+      <div class="col-md-1 "><strong>End Date</strong></div>
+      <div class="col-md-1">
+        <input type="text" class="form-control underlined" name="dateTo" id="dateTo" [(ngModel)]="dateTo"
+        (ngModelChange)="filterDateBefore('endDate', dateTo)" >
+      </div>
+    </div>
+  </div>
+  <hr/>
+</div>
+
+<div class="container-fluid" *ngFor="let task of tasks" style="padding-left:0px;">
+  <div class="row mt-3">
+    <div class="col-md-3"><strong>Task</strong></div>
+    <div class="col-md-3"><strong>Parent task</strong></div>
+    <div class="col-md-1"><strong>Priority</strong></div>
+    <div class="col-md-1"><strong>Start Date</strong></div>
+    <div class="col-md-1"><strong>End Date</strong></div>
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-1">&nbsp;</div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-3 text-center">
+      <div style="background: #EEE;">
+        <span style="line-height: 70px; vertical-align: middle;">
+          {{task.taskName}}
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-3 text-center">
+      <div style="background: #EEE;">
+        <span style="line-height: 70px; vertical-align: middle;">
+          {{task.parentTaskName}}&nbsp;
+        </span>
+      </div>
+    </div>
+    <div class="col-md-1">{{task.priority}}</div>
+    <div class="col-md-1">{{task.startDate}}</div>
+    <div class="col-md-1">{{task.endDate}}</div>
+    <div class="col-md-1"><button mat-button (click)="editTask(task)" [disabled]="task.isEnd">Edit</button></div>
+    <div class="col-md-1"><button mat-button [disabled]="task.isEnd" (click)="endTask(task)">End</button></div>
+  </div>
+</div>
