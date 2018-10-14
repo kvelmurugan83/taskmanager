@@ -36,6 +36,7 @@ public class Task implements Serializable {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.parent = task;
+		this.end = false;
 	}
 
 	@Id
@@ -58,6 +59,9 @@ public class Task implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER, optional = true)
 	@JoinColumn(name = "PARENT_ID")
 	private Task parent;
+	
+	@Column(name = "END")
+	private Boolean end;
 
 	@Override
 	public String toString() {

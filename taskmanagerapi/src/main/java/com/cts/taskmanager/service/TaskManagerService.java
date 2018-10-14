@@ -22,6 +22,14 @@ public class TaskManagerService {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(TaskManagerService.class);
 	
+	public TaskManagerService() {
+		
+	}
+	
+	public TaskManagerService(TaskRepository repository) {
+		this.repository = repository;
+	}
+	
 	@Autowired
 	TaskRepository repository;
 	
