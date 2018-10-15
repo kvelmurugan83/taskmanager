@@ -9,7 +9,7 @@ export let TASKS: Task[] = [
     priority: 26,
     parentTaskId: 0,
     parentTaskName: "",
-    isEnd: false
+    end: false
   },
   {
     taskId: 1002,
@@ -19,7 +19,7 @@ export let TASKS: Task[] = [
     priority: 10,
     parentTaskId: 1001,
     parentTaskName: 'First Task',
-    isEnd: false
+    end: false
   },
   {
     taskId: 1003,
@@ -29,6 +29,6 @@ export let TASKS: Task[] = [
     priority: 16,
     parentTaskId: 1001,
     parentTaskName: 'First Task',
-    isEnd: false
+    end: false
   }
 ];

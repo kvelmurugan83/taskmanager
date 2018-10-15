@@ -6,6 +6,6 @@ export class Task {
     priority: number = 0;
     parentTaskId: number = 0;
     parentTaskName: string = "";
-    isEnd: Boolean = false;
+    end: Boolean = false;
     
 }

@@ -14,6 +14,8 @@ export class TaskListComponent implements OnInit {
 
   error: boolean = false;
   errorMessage: string = "";
+  success: boolean = false;
+  successMsg: string = "";
   tasks: Task[];
   tasksMaster: Task[];
   taskName: string;
@@ -29,12 +31,15 @@ export class TaskListComponent implements OnInit {
   }
 
   ngOnInit() {
+   this.init();
+  }
+
+  private init() {
     this.taskManagerService.getAllTask().subscribe(
       taskresult => {
         this.tasksMaster = taskresult;
         this.tasks = this.tasksMaster;
         this.applyFilters();
-        console.log(this.tasksMaster);
       },
       error => {
         this.error=true;
@@ -91,12 +96,21 @@ export class TaskListComponent implements OnInit {
   }
 
   editTask(task: Task) {
-    console.log(task);
     this.router.navigate(['editTask/' + task.taskId]);
   }
 
   endTask(task: Task) {
-
+    this.taskManagerService.endTask(task).subscribe(
+      addResult => {
+        this.success = true;
+        this.init();
+        this.successMsg = "Task Successfully Ended"
+      },
+      error => {
+        this.error=true;
+        this.errorMessage = "Error occured While Eding Task";
+      }
+    )
   }
 
 }

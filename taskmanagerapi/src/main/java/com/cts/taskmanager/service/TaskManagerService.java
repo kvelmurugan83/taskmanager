@@ -106,6 +106,7 @@ public class TaskManagerService {
 		} else {
 			bean.setParentTaskName("");
 		}
+		bean.setEnd(task.getEnd());
 		return bean;
 	}
 	
@@ -122,6 +123,7 @@ public class TaskManagerService {
 			Optional<Task> parent = repository.findById(task.getParentTaskId());
 			t.setParent(parent.get());
 		}
+		t.setEnd(task.getEnd());
 		return t;
 	}
 }

@@ -5,7 +5,7 @@ import { Task } from '../model/task'
   selector: 'app-taskmanager',
   templateUrl: './taskmanager.component.html',
   styleUrls: ['./taskmanager.component.css']
-})
+}) 
 export class TaskmanagerComponent implements OnInit {
 
   task: Task = {
@@ -16,7 +16,7 @@ export class TaskmanagerComponent implements OnInit {
     priority: 26,
     parentTaskId: 0,
     parentTaskName: '',
-    isEnd: false
+    end: false
   };
 
   constructor() { }

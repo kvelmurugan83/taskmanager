@@ -28,6 +28,12 @@ export class TaskManagerService {
         return this.http.post<Task>(url, task, { headers: httpOptions.headers });
     }
 
+    endTask(task: Task) {
+        task.end = true;    
+        var url = Urls.getDomain().concat(APIURLS.createTask);
+        return this.http.put<Task>(url, task, { headers: httpOptions.headers });    
+    }
+
     update(task: Task): Observable<Task> {
         var url = Urls.getDomain().concat(APIURLS.createTask);
         return this.http.put<Task>(url, task, { headers: httpOptions.headers });

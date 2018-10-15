@@ -25,7 +25,7 @@ export class TaskService {
   }
 
   endTask(task: Task) {
-    task.isEnd = true;
+    task.end = true;
   }
 
 }

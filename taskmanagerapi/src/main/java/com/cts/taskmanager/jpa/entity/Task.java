@@ -36,7 +36,6 @@ public class Task implements Serializable {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.parent = task;
-		this.end = false;
 	}
 
 	@Id
@@ -61,7 +60,7 @@ public class Task implements Serializable {
 	private Task parent;
 	
 	@Column(name = "END")
-	private Boolean end;
+	private Boolean end = false;
 
 	@Override
 	public String toString() {

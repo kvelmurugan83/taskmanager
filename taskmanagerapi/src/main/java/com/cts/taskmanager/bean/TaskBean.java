@@ -31,4 +31,5 @@ public class TaskBean {
 	private Integer priority;
 	private Long parentTaskId;
 	private String parentTaskName;
+	private Boolean end = false;
 }

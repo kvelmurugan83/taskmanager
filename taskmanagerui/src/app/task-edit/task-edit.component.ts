@@ -48,6 +48,7 @@ export class TaskEditComponent implements OnInit {
     this.taskManagerService.create(this.task).subscribe(
       addResult => {
         this.success = true;
+        this.resetData();
       },
       error => {
         this.error=true;
