@@ -23,26 +23,24 @@ export class TaskEditComponent implements OnInit {
   }
 
   ngOnInit() {
-   
     this.task = new Task();
     this.sub = this.activeRoute.params.subscribe(params => {
-      if (params['id']) {
-
-        this.taskManagerService.getAllTask().subscribe(
-          taskresult => {
-            this.tasks  = taskresult;
+      this.taskManagerService.getAllTask().subscribe(
+        taskresult => {
+          this.tasks  = taskresult;
+          if (params['id']) {
             this.taskId = params['id'];
             this.action = "Update";
             this.task = this.tasks.find (t => t.taskId == params['id']);
-          },
-          error => {
-            this.error=true;
-            this.errorMessage = "Error occured While Loading Task";
+          } else {
+            this.action = "Add Task";
           }
-        )
-      } else {
-        this.action = "Add Task";
-      }
+        },
+        error => {
+          this.error=true;
+          this.errorMessage = "Error occured While Loading Task";
+        }
+      );
     });
   }
  
