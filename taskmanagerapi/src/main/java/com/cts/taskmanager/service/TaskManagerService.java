@@ -121,7 +121,9 @@ public class TaskManagerService {
 		t.setStartDate(task.getStartDate());
 		if (task.getParentTaskId() != null && task.getParentTaskId() > 0 ) {
 			Optional<Task> parent = repository.findById(task.getParentTaskId());
-			t.setParent(parent.get());
+			if (parent.isPresent()) {
+				t.setParent(parent.get());
+			}
 		}
 		t.setEnd(task.getEnd());
 		return t;

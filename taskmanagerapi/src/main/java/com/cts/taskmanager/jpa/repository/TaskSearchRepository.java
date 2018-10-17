@@ -24,9 +24,6 @@ public class TaskSearchRepository {
 		Map<String, Object> data = new LinkedHashMap<String, Object>();
 		boolean operator = true;
 		if (bean.getTaskName() != null) {
-			if (!operator) {
-				query.append(" AND ");
-			}
 			query.append(" taskName = :taskName ");
 			data.put("taskName", bean.getTaskName());
 			operator = false;
