@@ -55,7 +55,7 @@ public class Task implements Serializable {
 	@Column(name = "PRIORITY")
 	private Integer priority;
 	
-	@OneToOne(fetch = FetchType.EAGER, optional = true)
+	@OneToOne(fetch = FetchType.LAZY, optional = true)
 	@JoinColumn(name = "PARENT_ID")
 	private Task parent;
 	

@@ -99,6 +99,20 @@ export class TaskListComponent implements OnInit {
     this.router.navigate(['editTask/' + task.taskId]);
   }
 
+  delete(task: Task) {
+    this.taskManagerService.delete(task).subscribe(
+      addResult => {
+        this.success = true;
+        this.init();
+        this.successMsg = "Task Successfully Deleted"
+      },
+      error => {
+        this.error=true;
+        this.errorMessage = "Error occured While Deleting Task";
+      }
+    )
+  }
+
   endTask(task: Task) {
     this.taskManagerService.endTask(task).subscribe(
       addResult => {

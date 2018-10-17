@@ -39,6 +39,11 @@ export class TaskManagerService {
         return this.http.put<Task>(url, task, { headers: httpOptions.headers });
     }
 
+    delete(task: Task) {
+        var url = Urls.getDomain().concat(APIURLS.deleteTask) + "/" + task.taskId;
+        return this.http.delete(url, { headers: httpOptions.headers });
+    }
+
     getAllTask(): Observable<Task[]> {
         var url = Urls.getDomain().concat(APIURLS.retrieveAllTasks);
         return this.http.get<Task[]>(url, { headers: httpOptions.headers });

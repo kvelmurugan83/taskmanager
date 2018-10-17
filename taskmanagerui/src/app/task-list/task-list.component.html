@@ -76,5 +76,6 @@
     <div class="col-md-1">{{task.endDate}}</div>
     <div class="col-md-1"><button mat-button class="btn btn-primary float-right" (click)="editTask(task)" [disabled]="task.end">Edit</button></div>
     <div class="col-md-1"><button mat-button class="btn btn-primary float-right" [disabled]="task.end" (click)="endTask(task)">End</button></div>
+    <div class="col-md-1"><button mat-button class="btn btn-primary float-right" (click)="delete(task)">Delete</button></div>
   </div>
 </div>

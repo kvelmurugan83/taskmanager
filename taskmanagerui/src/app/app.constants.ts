@@ -17,5 +17,6 @@ export class Urls {
 export const APIURLS = {
     saveTask: "/api/task/saveTask",
     createTask: "/taskmanager/api/tasks",
+    deleteTask: "/taskmanager/api/tasks",
     retrieveAllTasks: "/taskmanager/api/tasks"
 }
