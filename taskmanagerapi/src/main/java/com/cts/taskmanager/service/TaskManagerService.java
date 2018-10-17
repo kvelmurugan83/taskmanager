@@ -63,7 +63,7 @@ public class TaskManagerService {
 			Task entity = this.transformTaskBeantoEntity(task);
 			return this.transaformTaskEntityToDomain(repository.save(entity));
 		} else {
-			throw new EntityNotFoundException("Taks Not Found for Id " + task.getTaskId() );
+			throw new EntityNotFoundException("Task Not Found for Id " + task.getTaskId() );
 		}
 	}
 	

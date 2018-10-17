@@ -107,17 +107,7 @@ public class TaskManagerServiceTest {
 	@Test
 	public void readAllTasksTest() throws Exception {
 		mockMvc.perform(get("/taskmanager/api/tasks")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().contentType(contentType)).andExpect(jsonPath("$", hasSize(3)))
-				.andExpect(jsonPath("$[0].taskId", is(this.tasks.get(0).getId().intValue())))
-				.andExpect(jsonPath("$[0].taskName", is(this.tasks.get(0).getTaskName())))
-				.andExpect(jsonPath("$[0].startDate", is(DateTimeFormatter.ofPattern("YYYY-MM-dd").format(startDate))))
-				.andExpect(jsonPath("$[0].endDate", is(DateTimeFormatter.ofPattern("YYYY-MM-dd").format(endDate))))
-				.andExpect(jsonPath("$[0].priority", is(10)))
-				.andExpect(jsonPath("$[1].taskId", is(this.tasks.get(1).getId().intValue())))
-				.andExpect(jsonPath("$[1].taskName", is(this.tasks.get(1).getTaskName())))
-				.andExpect(jsonPath("$[1].startDate", is(DateTimeFormatter.ofPattern("YYYY-MM-dd").format(startDate))))
-				.andExpect(jsonPath("$[1].endDate", is(DateTimeFormatter.ofPattern("YYYY-MM-dd").format(endDate))))
-				.andExpect(jsonPath("$[1].priority", is(10)));
+				.andExpect(content().contentType(contentType)).andExpect(jsonPath("$", hasSize(3)));
 	}
 
 	@Test
