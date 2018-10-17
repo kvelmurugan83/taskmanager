@@ -41,12 +41,14 @@ Install node packages by executing the below command
 npm install
 ```
 
-Start the Angular UI App by execuging the below command
+Start the Angular UI App by executing the below command
 
 ```
-ng serve
-``` 
+ng serve --port 4200
+```
 
+Application URL 
 
-
-Reference : https://spring.io/guides/gs/spring-boot-docker/
+```
+http://localhost:4200
+```
