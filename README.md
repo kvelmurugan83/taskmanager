@@ -53,8 +53,11 @@ Start the Angular UI App by executing the below command
 ng serve --port 4200
 ```
 
-Application URL 
+### Application URL 
 
 ```
 http://localhost:4200
 ```
+
+### Install Jenkins in Docker container
+docker run -u root --rm -d -p 8080:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean 
